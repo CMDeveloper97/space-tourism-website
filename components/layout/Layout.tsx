@@ -15,13 +15,13 @@ type TWrapper = {
 };
 
 const Wrapper = styled.div<TWrapper>`
-  @media (max-width: ${theme.breakpoints.sm}) { 
+  @media (max-width: ${theme.breakpoints.md}) { 
     background: url(${(props) => props.bgImageList.mobile}) no-repeat center;
   }  
-  @media (min-width: ${theme.breakpoints.sm} ) and (max-width: ${theme.breakpoints.md})  {  
+  @media (min-width: ${theme.breakpoints.md} ) and (max-width: ${theme.breakpoints.lg})  {  
     background: url(${(props) => props.bgImageList.tablet}) no-repeat bottom;
   }  
-  @media (min-width: ${theme.breakpoints.md} ) {
+  @media (min-width: ${theme.breakpoints.lg} ) {
     background: url(${(props) => props.bgImageList.desktop}) no-repeat bottom;
   } 
 

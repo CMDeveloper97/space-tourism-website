@@ -21,9 +21,9 @@ const LineDecorator = styled.hr<{
 
   display: none;
 
-  @media (min-width: ${theme.breakpoints.md}) {
+  @media (min-width: ${theme.breakpoints.lg}) {
     display: block;
-  }
+  } 
 `;
 
 export const HeaderLeft = () => {
