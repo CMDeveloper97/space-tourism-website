@@ -1,8 +1,9 @@
 import React from "react";
 import styled, { useTheme } from "styled-components";
 import Image from "next/image";
+import { theme } from "../../../pages/_app";
 
-const HeaderLeftContainer = styled.div<{ themeBreakpoints: TBreakpoints }>`
+const HeaderLeftContainer = styled.div`
   display: flex;
   align-items: center;
   padding-left: 5rem;
@@ -10,7 +11,6 @@ const HeaderLeftContainer = styled.div<{ themeBreakpoints: TBreakpoints }>`
 
 const LineDecorator = styled.hr<{
   color: string;
-  themeBreakpoints: TBreakpoints;
 }>`
   width: 90%;
   height: 1px;
@@ -21,7 +21,7 @@ const LineDecorator = styled.hr<{
 
   display: none;
 
-  @media (min-width: ${(props) => props.themeBreakpoints.medium}) {
+  @media (min-width: ${theme.breakpoints.md}) {
     display: block;
   }
 `;
@@ -30,17 +30,14 @@ export const HeaderLeft = () => {
   const theme = useTheme() as TTheme;
 
   return (
-    <HeaderLeftContainer themeBreakpoints={theme.breakpoints}>
+    <HeaderLeftContainer>
       <Image
         src="/assets/shared/logo.svg"
         alt="Landscape picture"
         width={48}
         height={48}
       />
-      <LineDecorator
-        color={theme.colors.primary.dark}
-        themeBreakpoints={theme.breakpoints}
-      />
+      <LineDecorator color={theme.colors.primary.dark} />
     </HeaderLeftContainer>
   );
 };

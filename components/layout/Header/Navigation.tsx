@@ -3,14 +3,15 @@ import Link from "next/link";
 
 import styled, { useTheme } from "styled-components";
 import { useRouter } from "next/dist/client/router";
+import { theme } from "../../../pages/_app";
 
 const UL = styled.ul<{ themeBreakpoints: TBreakpoints }>` 
   background: rgba(255, 255, 255, 0.07);
   display: flex;
   align-items: center;
   padding-left: 2rem;
-
-  @media (min-width: ${(props) => props.themeBreakpoints.medium}) { 
+ 
+  @media (min-width: ${theme.breakpoints.md}) {
   	backdrop-filter: blur(81px);
   	padding-left: 10rem;
   }

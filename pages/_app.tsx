@@ -4,7 +4,7 @@ import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 
-const theme: TTheme = {
+export const theme: TTheme = {
   colors: {
     primary: {
       base: '#FFFFFF',
@@ -18,10 +18,10 @@ const theme: TTheme = {
     },
   },
   breakpoints: {
-    small:  '375px',
-    medium: '768px',
-    large:  '992px',
-    xLarge: '1200px',
+    sm: '375px',
+    md: '768px',
+    lg: '992px',
+    xl: '1200px',
   },
 };
 

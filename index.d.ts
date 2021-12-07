@@ -40,10 +40,10 @@ type TData = {
 
 //THEME
 type TBreakpoints = {
-  small: string;
-  medium: string;
-  large:  string,
-  xLarge: string,
+  sm: string;
+  md: string;
+  lg:  string,
+  xl: string,
 }
 
 type TTheme = {

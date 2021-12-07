@@ -1,7 +1,8 @@
 import React from "react";
 import { Header } from "./Header/Header";
 import { Seo } from "../";
-import styled, { useTheme } from "styled-components";   
+import styled from "styled-components";    
+import { theme } from "../../pages/_app"; 
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -10,20 +11,17 @@ type LayoutProps = {
 };
 
 type TWrapper = {
-  bgImageList: TBgImageList; 
-  themeBreakpoints: TBreakpoints;
+  bgImageList: TBgImageList;  
 };
 
 const Wrapper = styled.div<TWrapper>`
-  @media (max-width: ${(props) => props.themeBreakpoints.small}) { 
+  @media (max-width: ${theme.breakpoints.sm}) { 
     background: url(${(props) => props.bgImageList.mobile}) no-repeat center;
-  } 
-
-  @media (min-width: ${(props) => props.themeBreakpoints.small} ) and  
-  (max-width: ${(props) => props.themeBreakpoints.medium} ) {  
+  }  
+  @media (min-width: ${theme.breakpoints.sm} ) and (max-width: ${theme.breakpoints.md})  {  
     background: url(${(props) => props.bgImageList.tablet}) no-repeat bottom;
   }  
-  @media (min-width: ${(props) => props.themeBreakpoints.medium} ) {
+  @media (min-width: ${theme.breakpoints.md} ) {
     background: url(${(props) => props.bgImageList.desktop}) no-repeat bottom;
   } 
 
@@ -32,13 +30,11 @@ const Wrapper = styled.div<TWrapper>`
   transition: background 0.1s ease-in-out;
 `;
 
-export const Layout = ({ children, title, bgImageList }: LayoutProps) => {
-  const theme = useTheme() as TTheme;
-
+export const Layout = ({ children, title, bgImageList }: LayoutProps) => {   
   return (
     <>
       <Seo title={title} />
-      <Wrapper bgImageList={bgImageList} themeBreakpoints={theme.breakpoints}>
+      <Wrapper bgImageList={bgImageList}>
         <Header />
         <div className="content-wrapper">{children}</div>
       </Wrapper>
