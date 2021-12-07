@@ -6,12 +6,16 @@ import { theme } from "../../../pages/_app";
 const HeaderLeftContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-left: 5rem;
+  padding-left: 3rem;
+  padding-top: 2rem;
+
+  @media (min-width: ${theme.breakpoints.md}) {
+    padding-left: 5rem;
+    padding-top: 0;
+  }
 `;
 
-const LineDecorator = styled.hr<{
-  color: string;
-}>`
+const LineDecorator = styled.hr<{ color: string }>`
   width: 90%;
   height: 1px;
   z-index: 2;
@@ -23,7 +27,7 @@ const LineDecorator = styled.hr<{
 
   @media (min-width: ${theme.breakpoints.lg}) {
     display: block;
-  } 
+  }
 `;
 
 export const HeaderLeft = () => {

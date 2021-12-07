@@ -15,6 +15,8 @@ type TWrapper = {
 };
 
 const Wrapper = styled.div<TWrapper>`
+  overflow: hidden;
+
   @media (max-width: ${theme.breakpoints.md}) { 
     background: url(${(props) => props.bgImageList.mobile}) no-repeat center;
   }  

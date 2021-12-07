@@ -4,19 +4,16 @@ import { theme } from "../../../pages/_app";
 import { HeaderLeft, Navigation } from "./";
 
 const HeaderContainer = styled.div`
-  display: none; 
+  padding-top: 0rem;
+  height: 10%;
+  margin-bottom: 5rem;
 
   @media (min-width: ${theme.breakpoints.md}) { 
-    display: block;
     margin-bottom: 0;
-    
-    padding-top: 0rem;
-    height: 10%;
   }
-
-  @media (min-width: ${theme.breakpoints.lg}) {  
+  @media (min-width: ${theme.breakpoints.lg}) {
     padding-top: 4rem;
-    height: 16%;
+    height: 16%; 
   }
 `;
 
