@@ -1,10 +1,4 @@
-import React, { useState } from "react";
-import Link from "next/link";
-
-import styled from "styled-components";
-import { useRouter } from "next/dist/client/router";
-import { theme } from "../../../pages/_app";
-import Image from "next/image";
+import React, { useState } from "react";;
 import { BurgerButton } from "./Navigation/BurgerButton";
 import { Menu } from './Navigation/Menu';
  

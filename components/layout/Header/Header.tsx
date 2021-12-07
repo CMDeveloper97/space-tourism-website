@@ -7,11 +7,9 @@ const HeaderContainer = styled.div`
   padding-top: 0rem;
   height: 10%;
   margin-bottom: 5rem;
-
-  @media (min-width: ${theme.breakpoints.md}) { 
-    margin-bottom: 0;
-  }
+ 
   @media (min-width: ${theme.breakpoints.lg}) {
+    margin-bottom: 0;
     padding-top: 4rem;
     height: 16%; 
   }

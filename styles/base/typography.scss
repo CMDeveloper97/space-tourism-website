@@ -55,8 +55,13 @@ p{
 	line-height: 25px;
 
 	@include breakpoint(medium){  
+		font-size: 1.6rem;
+		line-height: 28px;
+	}
+
+	@include breakpoint(large){  
 		font-size: 1.8rem;
-		line-height: 36px;
+		line-height: 32px;
 	}
 
 }

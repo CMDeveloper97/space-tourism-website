@@ -48,9 +48,9 @@ const UL = styled.ul<{ showSidebar: boolean }>`
   }
 `;
 const CloseButton = styled.div`
-  position: absolute; 
+  position: absolute;
   right: 3rem;
-    top: 3rem;
+  top: 3rem;
 
   @media (min-width: ${theme.breakpoints.md}) {
     display: none;
@@ -62,8 +62,7 @@ type MenuProps = {
   showSidebar: boolean;
 };
 
-export const Menu = ({ setShowSidebar, showSidebar }: MenuProps) => { 
-
+export const Menu = ({ setShowSidebar, showSidebar }: MenuProps) => {
   return (
     <UL showSidebar={showSidebar}>
       <CloseButton onClick={() => setShowSidebar(false)}>
