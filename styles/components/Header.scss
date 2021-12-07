@@ -1,0 +1,55 @@
+
+li.navText{
+	font-family: $second-font;
+	font-size: 1.4rem;
+	letter-spacing: 2.7px;
+	color: white;
+	margin-right: 5rem;
+
+	height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	cursor: pointer;  
+
+	@include breakpoint(medium){  
+		font-size: 1.6rem;
+	}
+
+	strong{
+		margin-right: 1rem;
+		display: none;
+
+		@include breakpoint(medium){  
+			display: block;
+		}
+	}
+
+	&:hover{
+		padding-top: 4px;
+		border-bottom: 4px solid color(primary,dark);  
+	}
+
+	&--active{
+		padding-top: 4px;
+		border-bottom: 4px solid color(primary); 
+	}
+
+
+}
+
+// hr{
+// 	width: 90%;
+//     height: 2px;
+// 	background: color(primary,dark);
+// 	border: none;
+// 	opacity: 0.5;
+// 	z-index: 2;
+//     // margin-right: -3rem;
+
+// 	display: none;
+
+// 	@include breakpoint(medium){  
+// 		display: block;
+// 	}
+// }

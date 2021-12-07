@@ -1,0 +1,48 @@
+
+@import 'abstracts/breakpoints';
+@import 'abstracts/colors';
+@import 'abstracts/breakpoints';  
+
+@import 'base/typography';
+
+@import 'components/Header';
+
+@import 'pages/crew'; 
+@import 'pages/destination'; 
+@import 'pages/home'; 
+@import 'pages/technology'; 
+
+html {
+	box-sizing: border-box;
+  font-size:62.5%; // 1rem = 10px
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+} 
+
+html,
+body {
+  padding: 0;
+  margin: 0;  
+} 
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+ 
+ 
+.content-wrapper{ 
+  max-width:1200px;
+  margin:0 auto;
+  padding: 0 2rem;
+  height: 80%;
+  text-align: center;
+  
+	@include breakpoint(medium){  
+    text-align: left;
+  }
+}
+ 

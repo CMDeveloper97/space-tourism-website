@@ -1,0 +1,73 @@
+$main-font: 'Bellefair', Arial, sans-serif;
+$second-font: 'Barlow Condensed', Arial, sans-serif;
+$text-font: 'Barlow', Arial, sans-serif;
+
+h1,h2,h3,h4,h5,p{
+	margin:0;
+	color: white;
+}
+
+h1{
+	font-family: $main-font;
+	font-weight: 400;
+	font-size: 8rem;
+	text-transform: uppercase; 
+
+    @include breakpoint(medium){ 
+		font-size: 15rem;
+	}
+
+}
+h2{
+	@extend h1;
+	font-size: 10rem;
+}
+h3{
+	@extend h1;
+	font-size: 5.6rem;
+}
+h4{
+	@extend h1;
+	font-size: 2rem; 
+
+	@include breakpoint(medium){ 
+		font-size: 3.2rem;	
+	}
+}
+h5{
+	font-family: $second-font; 
+	font-size: 1.6rem;
+	letter-spacing: 2.70px;
+	font-weight: 400;
+	text-transform: uppercase;
+
+	@include breakpoint(medium){ 
+		font-size: 2.8rem;
+		letter-spacing: 4.75px;
+	}
+
+}
+
+p{ 
+	font-family: $text-font; 
+	font-size: 1.5rem;
+	font-weight: 300;
+	line-height: 25px;
+
+	@include breakpoint(medium){  
+		font-size: 1.8rem;
+		line-height: 36px;
+	}
+
+}
+
+p.subH1{ 
+	@extend h1; 
+	font-size: 2.8rem;
+	letter-spacing: 2.35px;
+}
+p.subH2{ 
+	@extend h1;
+	font-size: 1.4rem; 
+	letter-spacing: 2.7px;
+} 

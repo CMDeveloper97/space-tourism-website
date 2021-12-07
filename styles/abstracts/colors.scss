@@ -1,0 +1,27 @@
+$black: #0B0D17;
+$white: #FFFFFF;
+$subtitle-color: #D0D6F9; 
+$gray: #979797;
+
+$colors: (
+	primary: (
+		base:  #FFFFFF,  
+		dark: #979797
+	),
+	secondary: (
+		base:  #D0D6F9, 
+	),
+	black: (
+		base: #0B0D17,
+	)
+);
+
+@function color($color-name, $color-variant:null) {
+	@if ($color-variant != null) {
+		@return map-get(map-get($colors, $color-name), $color-variant);
+	}
+
+	@else {
+		@return map-get(map-get($colors, $color-name), base);
+	}
+}
