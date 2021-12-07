@@ -1,11 +1,10 @@
 import React from 'react'
-import { Layout } from '../components';
-import { Seo } from '../components/seo'; 
+import { Layout } from '../components'; 
+import { fetchAPI } from '../lib/api';
 
 import ImageMobile from '/public/assets/destination/background-destination-mobile.jpg' 
 import ImageDesktop from '/public/assets/destination/background-destination-desktop.jpg' 
 import ImageTablet from '/public/assets/destination/background-destination-tablet.jpg' 
-import { fetchAPI } from '../lib/api';
 
 const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 	const bgImageList: TBgImageList = {
@@ -17,8 +16,7 @@ const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 	console.log(destinations); 
 
 	return (
-		<Layout title="Destination" bgImageList={bgImageList}> 
-			<Seo title="Destination"/>
+		<Layout title="Destination" bgImageList={bgImageList}>  
 			<p>Destionation</p>
 		</Layout>
 	)
