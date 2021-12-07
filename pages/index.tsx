@@ -1,20 +1,19 @@
 import type { NextPage } from "next"; 
 import {Layout } from "../components"; 
+import { fetchAPI } from '../lib/api'
 
 import ImageMobile from '/public/assets/home/background-home-mobile.jpg' 
 import ImageDesktop from '/public/assets/home/background-home-desktop.jpg' 
 import ImageTablet from '/public/assets/home/background-home-tablet.jpg' 
+
 
 const Home: NextPage = () => {
   const bgImageList: TBgImageList = {
     mobile: ImageMobile.src,
     tablet: ImageTablet.src,
     desktop: ImageDesktop.src,
-  }
-
-  console.log(bgImageList);
+  } 
   
-
   return (
     <Layout title="Home" bgImageList={bgImageList}> 
       <div className="home-container">
