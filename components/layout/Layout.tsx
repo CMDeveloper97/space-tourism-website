@@ -15,7 +15,7 @@ type TWrapper = {
 };
 
 const Wrapper = styled.div<TWrapper>`
-  @media (min-width: ${(props) => props.themeBreakpoints.small}) { 
+  @media (max-width: ${(props) => props.themeBreakpoints.small}) { 
     background: url(${(props) => props.bgImageList.mobile}) no-repeat center;
   } 
 

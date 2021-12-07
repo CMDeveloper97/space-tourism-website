@@ -17,31 +17,26 @@ const UL = styled.ul<{ themeBreakpoints: TBreakpoints }>`
 `; 
 
 export const Navigation = () => {
-  const router = useRouter();
-  const theme = useTheme() as TTheme; 
+  const theme = useTheme() as TTheme;   
 
   return (
     <UL themeBreakpoints={theme.breakpoints}>
-      <Link href="/" passHref>
-        <li className="navText navText--active">
-          <strong>00</strong> HOME
-        </li>
-      </Link>
-      <Link href="/destination" passHref>
-        <li className="navText">
-          <strong>01</strong> DESTIONATION
-        </li>
-      </Link>
-      <Link href="/crew" passHref>
-        <li className="navText">
-          <strong>02</strong> CREW
-        </li>
-      </Link>
-      <Link href="/technology" passHref>
-        <li className="navText">
-          <strong>03</strong> TECHNOLOGY
-        </li>
-      </Link>
+      <NavElement index="0" title="HOME" route="/" />
+      <NavElement index="1" title="DESTINATION" route="/destination" />
+      <NavElement index="2" title="CREW" route="/crew" />
+      <NavElement index="3" title="TECHNOLOGY" route="/technology" /> 
     </UL>
   );
 };
+
+const NavElement = ({route, index, title}: {route: string, index: string, title: string}) => { 
+  const router = useRouter();
+
+  return (
+    <Link href={route} passHref>
+      <li className={`navText navText${route === router.pathname ? "--active" : null}`} >
+        <strong>0{index}</strong>{title}
+      </li>
+    </Link>
+  )
+}
