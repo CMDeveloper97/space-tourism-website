@@ -24,6 +24,7 @@ const UL = styled.ul<{ showSidebar: boolean }>`
 
   position: fixed;
   top: 0;
+  z-index: 99;
 
   height: 100%;
   width: 65%;

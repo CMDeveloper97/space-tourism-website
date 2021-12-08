@@ -1,0 +1,50 @@
+.destination-container{  
+
+	&__image{
+		padding-top:4rem;
+
+		.image-container {  
+			margin: 0 auto;
+			width: 20rem; 
+			height: 20rem;  
+			position: relative;
+
+			.image {
+			  object-fit: contain;
+			  width: 100% !important;
+			  height: 100%!important;
+			  position: relative !important;
+			  height: unset !important;
+			}
+		  }
+	} 
+
+	&__content{ 
+
+		.content__destinations{
+			display: flex;
+			justify-content: space-evenly;
+			max-width: 25rem;
+			margin: 3rem auto;
+		}
+		
+		p.description{ 
+			padding: 1rem 0 3rem 0; 
+		}
+
+		.content__distances{
+			border-top: 1px solid #383B4B;  
+			padding: 3rem 0 2rem 0; 
+
+			& > * {
+				 margin-bottom: 4rem;
+			}
+			
+			.subH2{
+				padding-bottom: 1.5rem;
+			}
+			 
+
+		}
+	}
+}

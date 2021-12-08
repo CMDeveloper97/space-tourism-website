@@ -17,6 +17,7 @@ li.navText{
 
 	@include breakpoint(medium){  
 		font-size: 1.4rem;   
+		letter-spacing: 2.36px;
 		margin: 0 6rem 0 0;
 		padding:0;
 		width: initial;
@@ -25,6 +26,11 @@ li.navText{
 		text-align: center;
 		justify-content: center;
 	}
+
+	@include breakpoint(large){ 
+		letter-spacing: 2.7px;
+	}  
+
 
 	strong{
 		margin-right: 1rem; 

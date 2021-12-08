@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Layout } from '../components'; 
 import { fetchAPI } from '../lib/api';
+import Image from "next/image";
 
 import ImageMobile from '/public/assets/destination/background-destination-mobile.jpg' 
 import ImageDesktop from '/public/assets/destination/background-destination-desktop.jpg' 
@@ -11,13 +12,58 @@ const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 		mobile: ImageMobile.src,
 		tablet: ImageTablet.src,
 		desktop: ImageDesktop.src,
-	}
- 
+	} 
+
 	console.log(destinations); 
+	
+	const [menuOption, setMenuOption] = useState(0);
 
 	return (
 		<Layout title="Destination" bgImageList={bgImageList}>  
-			<p>Destionation</p>
+			<h5 className="page-header"><strong>01</strong> Pick your destination</h5> 
+
+			<div className="destination-container">
+				<div className="destination-container__image">
+					<div className="image-container">
+						<Image
+							src={destinations[menuOption].images.png.substring(1)}
+							alt="Landscape picture" 
+							className='image'
+							layout="fill"
+						/>
+					</div>
+				</div>
+
+				<div className="destination-container__content">
+					<div className="content__destinations">
+						{destinations.map((destination,idx)=> (
+							<p 
+								onClick={()=>setMenuOption(idx)}
+								key={idx} 
+								className={`NavText ${menuOption===idx && 'NavText--active '} `}>
+								{destination.name}
+							</p>
+						))} 
+
+					</div>
+
+					<h2>{destinations[menuOption].name}</h2>
+					<p className="description">{destinations[menuOption].description}</p>
+
+					<div className="content__distances">
+						<div className="distances__distance">
+							<p className="subH2">AVG. DISTANCE</p>
+							<p className="subH1">{destinations[menuOption].distance}</p>
+						</div>
+						<div className="distances__travel-time">
+							<p className="subH2">EST. TRAVEL TIME</p>
+							<p className="subH1">{destinations[menuOption].travel}</p>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
 		</Layout>
 	)
 }

@@ -13,8 +13,7 @@ export const Crew = ({ crew }: { crew: TCrew[] }) => {
 		desktop: ImageDesktop.src,
 	}
 
-	console.log(crew);
-	
+	console.log(crew); 
 
 	return (
 		<Layout title="Crew" bgImageList={bgImageList}>  

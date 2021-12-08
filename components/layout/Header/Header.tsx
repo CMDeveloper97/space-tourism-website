@@ -6,7 +6,8 @@ import { HeaderLeft, Navigation } from "./";
 const HeaderContainer = styled.div`
   padding-top: 0rem;
   height: 10%;
-  margin-bottom: 5rem;
+  position: relative;
+  /* margin-bottom: 5rem; */
  
   @media (min-width: ${theme.breakpoints.lg}) {
     margin-bottom: 0;

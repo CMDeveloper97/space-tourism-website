@@ -9,11 +9,12 @@ $hover-button-out: 0 0 0 0 rgba(color(primary),.10);
 
 	max-width: 500px;
 	margin: 0 auto; 
+	padding-top: 4rem;
 
 	@include breakpoint(large){    
 		justify-content: space-evenly;
 		align-items: flex-end; 
-		height: 80%; 
+		height: 85%; 
 		max-width: none; 
 		flex-direction: row;
 	}
