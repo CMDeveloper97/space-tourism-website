@@ -3,7 +3,7 @@ type TBgImageList = { mobile: string, tablet: string, desktop: string }
 
 /**
  * Pages Data
- */
+ */  
 type TDestinations = {
   name: string
   images: {

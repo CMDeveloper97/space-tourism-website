@@ -29,7 +29,8 @@ const Home: NextPage = () => {
         </div>
         <div className="home-container__button-container"> 
           <div className="button-container__button"><h4>Explore</h4></div>
-        </div> 
+        </div>
+
       </div>
     </Layout>
   );

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Layout } from '../components'; 
+import { Layout, PageHeader } from '../components'; 
 import { fetchAPI } from '../lib/api';
 import Image from "next/image";
 
@@ -12,15 +12,13 @@ const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 		mobile: ImageMobile.src,
 		tablet: ImageTablet.src,
 		desktop: ImageDesktop.src,
-	} 
-
-	console.log(destinations); 
+	}  
 	
 	const [menuOption, setMenuOption] = useState(0);
 
 	return (
-		<Layout title="Destination" bgImageList={bgImageList}>  
-			<h5 className="page-header"><strong>01</strong> Pick your destination</h5> 
+		<Layout title="Destination" bgImageList={bgImageList}>   
+			<PageHeader number="1" text="Pick your destination"/>
 
 			<div className="destination-container">
 				<div className="destination-container__image">
