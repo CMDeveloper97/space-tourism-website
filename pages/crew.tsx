@@ -5,6 +5,7 @@ import ImageMobile from '/public/assets/crew/background-crew-mobile.jpg'
 import ImageDesktop from '/public/assets/crew/background-crew-desktop.jpg' 
 import ImageTablet from '/public/assets/crew/background-crew-tablet.jpg' 
 import { fetchAPI } from '../lib/api';
+import { PageHeader } from '../components/shared/PageHeader';
 
 export const Crew = ({ crew }: { crew: TCrew[] }) => {
 	const bgImageList: TBgImageList = {
@@ -16,9 +17,10 @@ export const Crew = ({ crew }: { crew: TCrew[] }) => {
 	console.log(crew); 
 
 	return (
-		<Layout title="Crew" bgImageList={bgImageList}>  
-		<p>Crew</p>
-	</Layout>
+		<Layout title="Crew" bgImageList={bgImageList}>   
+			<PageHeader number="2" text="Meet your crew"/> 
+
+		</Layout>
 	)
 }
 

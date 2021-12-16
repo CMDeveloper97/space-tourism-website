@@ -1,32 +1,30 @@
-import React, { useState } from 'react'
-import { Layout, PageHeader } from '../components'; 
-import { fetchAPI } from '../lib/api';
+import React, { useState } from "react";
+import { Layout, PageHeader } from "../components";
+import { fetchAPI } from "../lib/api";
 import Image from "next/image";
 
-import ImageMobile from '/public/assets/destination/background-destination-mobile.jpg' 
-import ImageDesktop from '/public/assets/destination/background-destination-desktop.jpg' 
-import ImageTablet from '/public/assets/destination/background-destination-tablet.jpg' 
+import ImageMobile from "/public/assets/destination/background-destination-mobile.jpg";
+import ImageDesktop from "/public/assets/destination/background-destination-desktop.jpg";
+import ImageTablet from "/public/assets/destination/background-destination-tablet.jpg";
 
 const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 	const bgImageList: TBgImageList = {
 		mobile: ImageMobile.src,
 		tablet: ImageTablet.src,
 		desktop: ImageDesktop.src,
-	}  
-	
+	};
+
 	const [menuOption, setMenuOption] = useState(0);
 
 	return (
-		<Layout title="Destination" bgImageList={bgImageList}>   
-			<PageHeader number="1" text="Pick your destination"/>
-
+		<Layout title="Destination" bgImageList={bgImageList}> 
 			<div className="destination-container">
 				<div className="destination-container__image">
 					<div className="image-container">
 						<Image
 							src={destinations[menuOption].images.png.substring(1)}
-							alt="Landscape picture" 
-							className='image'
+							alt="Landscape picture"
+							className="image"
 							layout="fill"
 						/>
 					</div>
@@ -34,15 +32,16 @@ const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 
 				<div className="destination-container__content">
 					<div className="content__destinations">
-						{destinations.map((destination,idx)=> (
-							<p 
-								onClick={()=>setMenuOption(idx)}
-								key={idx} 
-								className={`NavText ${menuOption===idx && 'NavText--active '} `}>
+						{destinations.map((destination, idx) => (
+							<p
+								onClick={() => setMenuOption(idx)}
+								key={idx}
+								className={`NavText ${menuOption === idx && "NavText--active "
+									} `}
+							>
 								{destination.name}
 							</p>
-						))} 
-
+						))}
 					</div>
 
 					<h2>{destinations[menuOption].name}</h2>
@@ -58,22 +57,20 @@ const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 							<p className="subH1">{destinations[menuOption].travel}</p>
 						</div>
 					</div>
-
 				</div>
-
 			</div>
 		</Layout>
-	)
-}
+	);
+};
 
 export async function getServerSideProps() {
-	const destinations: TDestinations[] = await fetchAPI('destinations'); 
+	const destinations: TDestinations[] = await fetchAPI("destinations");
 
 	return {
-	  props: {
-		destinations,
-	  },
-	}
-  }
+		props: {
+			destinations,
+		},
+	};
+}
 
-export default Destination; 
+export default Destination;

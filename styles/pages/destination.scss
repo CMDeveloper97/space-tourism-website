@@ -19,13 +19,16 @@
 		  }
 	} 
 
-	&__content{ 
+	&__content{  
+		max-width: 500px;
+		margin: 0 auto;
 
 		.content__destinations{
 			display: flex;
 			justify-content: space-evenly;
 			max-width: 25rem;
 			margin: 3rem auto;
+
 		}
 		
 		p.description{ 

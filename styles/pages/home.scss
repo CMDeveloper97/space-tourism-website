@@ -1,78 +1,112 @@
 $hover-button-in: 0 0 0 6rem rgba(color(primary), .10);
 $hover-button-out: 0 0 0 0 rgba(color(primary),.10);
 
-.home-container{  
-    height: 95%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.home-text{
+	h1{ margin: 1rem auto 1.5rem auto; }  
+	flex-basis: 30%;
+}
 
-	max-width: 500px;
-	margin: 0 auto; 
-	padding-top: 4rem;
+.home-button-container{
+	display: flex;
+	justify-content: flex-end; 
 
-	@include breakpoint(large){    
-		justify-content: space-evenly;
-		align-items: flex-end; 
-		height: 85%; 
-		max-width: none; 
-		flex-direction: row;
-	}
-
-	&__text{  
-		h1{ margin: 1rem auto 1.5rem auto; }  
-		flex-basis: 30%;
-	}
-
-	&__button-container{
-		display: flex;
-		justify-content: flex-end; 
-	
-		@include breakpoint(x-large){   
-			flex: 1;
-		}
-
-		.button-container__button{
+	&__button{ 
 			margin: 0 auto;
 			cursor: pointer;
 			background: white;
-			border-radius: 50%; 
-			
+			border-radius: 50%; 	
 			width: 15rem;
 			height: 15rem;
-	
+
 			@include breakpoint(medium){  
 				width: 24.2rem;
 				height: 24.2rem; 
 			}
-
 			@include breakpoint(large){ 
 				margin: 0;
 				width: 27rem;
 				height: 27rem; 
 			}
-	
+
 			display: flex;
 			align-items: center;
-			justify-content: center; 
-			
-			animation: pulseOut 0.2s;  
-			
+			justify-content: center; 		
+			animation: pulseOut 0.2s;  	
+
 			&:hover, 
 			&:focus { 
 				animation: pulseIn 0.4s;
 				box-shadow: $hover-button-in;
 			}
+			h4{ color: color(black); } 
+	}
+
+}
+// .home-container{  
+//     height: 95%;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+
+// 	max-width: 500px;
+// 	margin: 0 auto; 
+// 	padding-top: 4rem;
+
+// 	@include breakpoint(large){    
+// 		justify-content: space-evenly;
+// 		align-items: flex-end; 
+// 		height: 85%; 
+// 		max-width: none; 
+// 		flex-direction: row;
+// 	}
+
+// 	&__text{  
+// 		h1{ margin: 1rem auto 1.5rem auto; }  
+// 		flex-basis: 30%;
+// 	}
+
+// 	&__button-container{
+// 		display: flex;
+// 		justify-content: flex-end; 
 	
-			h4{
-				color: color(black)
-			}
-		}
+// 		@include breakpoint(x-large){   
+// 			flex: 1;
+// 		}
+
+// 		.button-container__button{
+// 			margin: 0 auto;
+// 			cursor: pointer;
+// 			background: white;
+// 			border-radius: 50%; 	
+// 			width: 15rem;
+// 			height: 15rem;
+// 			@include breakpoint(medium){  
+// 				width: 24.2rem;
+// 				height: 24.2rem; 
+// 			}
+// 			@include breakpoint(large){ 
+// 				margin: 0;
+// 				width: 27rem;
+// 				height: 27rem; 
+// 			}
+// 			display: flex;
+// 			align-items: center;
+// 			justify-content: center; 		
+// 			animation: pulseOut 0.2s;  		
+// 			&:hover, 
+// 			&:focus { 
+// 				animation: pulseIn 0.4s;
+// 				box-shadow: $hover-button-in;
+// 			}
+// 			h4{
+// 				color: color(black)
+// 			}
+// 		}
 
 		
-	} 
+// 	} 
 
- }
+//  }
 
 
 @keyframes pulseIn {
