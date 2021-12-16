@@ -1,3 +1,27 @@
+.destination-image{
+	background: blue;
+
+	&__main{
+		margin: 0 auto;
+		width: 20rem; 
+		height: 20rem;  
+		position: relative;
+
+		.image {
+			object-fit: contain;
+			width: 100% !important;
+			height: 100%!important;
+			position: relative !important;
+			height: unset !important;
+		  }
+	}
+}
+
+.destination-main{
+	background: red;
+}
+
+
 .destination-container{  
 
 	&__image{

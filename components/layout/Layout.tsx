@@ -39,9 +39,11 @@ export const Layout = ({ children, title, bgImageList }: LayoutProps) => {
       <Seo title={title} />
       <Wrapper bgImageList={bgImageList}>
         <Header />
-        <div className={`content-wrapper ${title === 'Home' && "home"}`}> 
+        <div className="content-wrapper"> 
           {title !== 'Home' &&  <PageHeader number="1" text="Pick your destination" /> }
-          {children}
+          <div  className={`main-content ${title === 'Home' && "home"}`}> 
+            {children}
+          </div>
         </div>
       </Wrapper>
     </>

@@ -8,17 +8,31 @@ import ImageDesktop from "/public/assets/destination/background-destination-desk
 import ImageTablet from "/public/assets/destination/background-destination-tablet.jpg";
 
 const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
-	const bgImageList: TBgImageList = {
-		mobile: ImageMobile.src,
-		tablet: ImageTablet.src,
-		desktop: ImageDesktop.src,
-	};
+  const bgImageList: TBgImageList = {
+    mobile: ImageMobile.src,
+    tablet: ImageTablet.src,
+    desktop: ImageDesktop.src,
+  };
 
-	const [menuOption, setMenuOption] = useState(0);
+  const [menuOption, setMenuOption] = useState(0);
 
-	return (
-		<Layout title="Destination" bgImageList={bgImageList}> 
-			<div className="destination-container">
+  return (
+    <Layout title="Destination" bgImageList={bgImageList}>
+      <div className="destination-image">
+        <div className="destination-image__main">
+          <Image
+            src={destinations[menuOption].images.png.substring(1)}
+            alt="Landscape picture"
+            className="image"
+            layout="fill"
+          />
+        </div>
+      </div>
+      <div className="destination-main">
+		  <p>HOME</p>
+	  </div>
+
+      {/* <div className="destination-container">
 				<div className="destination-container__image">
 					<div className="image-container">
 						<Image
@@ -58,19 +72,19 @@ const Destination = ({ destinations }: { destinations: TDestinations[] }) => {
 						</div>
 					</div>
 				</div>
-			</div>
-		</Layout>
-	);
+			</div> */}
+    </Layout>
+  );
 };
 
 export async function getServerSideProps() {
-	const destinations: TDestinations[] = await fetchAPI("destinations");
+  const destinations: TDestinations[] = await fetchAPI("destinations");
 
-	return {
-		props: {
-			destinations,
-		},
-	};
+  return {
+    props: {
+      destinations,
+    },
+  };
 }
 
 export default Destination;
